@@ -4,13 +4,13 @@ on:
   push:
     branches: [ master ]
     paths:
-      - "app/**"
+      - "src/**"
       - "pyproject.toml"
       - "tests/**"
   pull_request:
     branches: [ master ]
     paths:
-      - "app/**"
+      - "src/**"
       - "pyproject.toml"
       - "tests/**"
 

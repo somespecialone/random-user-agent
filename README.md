@@ -17,7 +17,24 @@
 
 Micro available on this address: [randua.deta.dev](https://randua.deta.dev) ⚠
 
-> Just do `GET` request!
+> Just do `GET` request to `/`!
+
+### Response:
+
+```json5
+{
+  "status": true, // boolean
+  "ua": "user-agent"  // string
+}
+```
+If error:
+
+```json5
+{
+  "status": false, // boolean
+  "msg": "error msg"  // string
+}
+```
 
 ## List of used `User-Agents` 🤖:
 
