@@ -11,8 +11,21 @@
 
 ---
 
-[![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/somespecialone/random-user-agent/app)
+[![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/somespecialone/random-user-agent.git)
 
 ## Let's fly into space! 🚀✨
 
-https://randua.deta.dev/
+Micro available on this address: [randua.deta.dev](https://randua.deta.dev) ⚠
+
+> Just do `GET` request!
+
+## List of used `User-Agents` 🤖:
+
+> Thanks authors and maintainers of these resources 🙏
+
+- [pzb `gist`](https://gist.github.com/pzb/b4b6f57144aea7827ae4)
+- [seolik.ru](https://seolik.ru/user-agents-list)
+
+## TODO 📑
+
+- [ ] Much more user-agents
