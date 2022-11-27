@@ -2,18 +2,22 @@
 name = "random-user-agent"
 version = "1.0.0"
 description = "Simple 🚀 API that get random user-agent on each GET request!"
-authors = ["somespecialone <Tkachenkodmitriy@yahoo.com>"]
+authors = ["Dmytro Tkachenko <tkachenkodmitriy@yahoo.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "^0.75.0"
+
+[tool.poetry.group.dev.dependencies]
 uvicorn = "^0.17.5"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
 pytest = "^7.0.0"
 pytest-cov = "^3.0.0"
 requests = "^2.27.1"
-black = "*"
 
 [tool.black]
 line-length = 120

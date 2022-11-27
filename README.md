@@ -23,15 +23,16 @@ Micro available on this address: [randua.deta.dev](https://randua.deta.dev) ⚠
 
 ```json5
 {
-  "status": true, // boolean
+  "status": true,  // boolean
   "ua": "user-agent"  // string
 }
 ```
+
 If error:
 
 ```json5
 {
-  "status": false, // boolean
+  "status": false,  // boolean
   "msg": "error msg"  // string
 }
 ```
@@ -41,7 +42,6 @@ If error:
 > Thanks authors and maintainers of these resources 🙏
 
 - [pzb `gist`](https://gist.github.com/pzb/b4b6f57144aea7827ae4)
-- [seolik.ru](https://seolik.ru/user-agents-list)
 
 ## TODO 📑
 
