@@ -13,9 +13,11 @@
 
 [![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/somespecialone/random-user-agent.git)
 
-## Let's fly into space! 🚀✨
+### **Micro available on [randua.deta.dev](https://randua.deta.dev)**
 
-Micro available on this address: [randua.deta.dev](https://randua.deta.dev) ⚠
+---
+
+## Let's fly into space! 🚀✨
 
 > Just do `GET` request to `/`!
 
@@ -23,17 +25,7 @@ Micro available on this address: [randua.deta.dev](https://randua.deta.dev) ⚠
 
 ```json5
 {
-  "status": true,  // boolean
   "ua": "user-agent"  // string
-}
-```
-
-If error:
-
-```json5
-{
-  "status": false,  // boolean
-  "msg": "error msg"  // string
 }
 ```
 

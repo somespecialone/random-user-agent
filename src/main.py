@@ -1,9 +1,8 @@
 import random
-from typing import Union
 
 from fastapi import FastAPI
 
-from src.models import UserAgentResponse, ResponseError
+from src.models import UserAgentResponse
 from src.config import settings
 
 
@@ -22,14 +21,10 @@ app = FastAPI(
     },
 )
 
+with settings.USER_AGENTS_FILE.open("r") as ua:
+    agents = tuple(ua.read().splitlines())
 
-@app.get("/", response_model=Union[UserAgentResponse, ResponseError])
+
+@app.get("/", response_model=UserAgentResponse)
 def get_random_ua():
-    try:
-        with settings.USER_AGENTS_FILE.open("r") as ua:
-            random_row = random.choice(ua.readlines())
-
-        return {"status": True, "ua": random_row.replace("\n", "")}
-
-    except Exception as e:
-        return {"status": False, "msg": e.args[0]}
+    return {"ua": random.choice(agents)}
