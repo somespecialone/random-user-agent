@@ -6,7 +6,7 @@ authors = ["Dmytro Tkachenko <tkachenkodmitriy@yahoo.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.75.0"
+fastapi = "^0.88.0"
 
 [tool.poetry.group.dev.dependencies]
 uvicorn = "^0.17.5"
