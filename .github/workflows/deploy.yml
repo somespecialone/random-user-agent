@@ -15,3 +15,4 @@ jobs:
         with:
           deta-access-token: ${{ secrets.DETA_TOKEN }}
           deta-name: 'random-user-agent'
+          deta-project-dir: "src"
