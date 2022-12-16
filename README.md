@@ -17,16 +17,26 @@
 
 ---
 
-## Let's fly into space! 🚀✨
+## Routes! 🚀✨
 
-> Just do `GET` request to `/`!
+> Just do `GET` requests!
 
-### Response:
+### `/`:
 
-```json5
+```json
 {
-  "ua": "user-agent"  // string
+  "ua": "user-agent"
 }
+```
+
+### `/all`:
+
+```json
+[
+  "ua1",
+  "ua2",
+  ...
+]
 ```
 
 ## List of used `User-Agents` 🤖:

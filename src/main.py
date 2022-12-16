@@ -22,9 +22,14 @@ app = FastAPI(
 )
 
 with settings.USER_AGENTS_FILE.open("r") as ua:
-    agents = tuple(ua.read().splitlines())
+    agents = ua.read().splitlines()
 
 
 @app.get("/", response_model=UserAgentResponse)
-def get_random_ua():
+def get_random_agent():
     return {"ua": random.choice(agents)}
+
+
+@app.get("/all", response_model=list[str])
+def get_all_agents():
+    return agents

@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "random-user-agent"
-version = "1.0.0"
+version = "1.0.3"
 description = "Simple 🚀 API that get random user-agent on each GET request!"
 authors = ["Dmytro Tkachenko <tkachenkodmitriy@yahoo.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-fastapi = "^0.75.0"
+python = "^3.10.5"
+fastapi = "^0.88.0"
 
 [tool.poetry.group.dev.dependencies]
 uvicorn = "^0.17.5"
@@ -17,7 +18,7 @@ optional = true
 [tool.poetry.group.test.dependencies]
 pytest = "^7.0.0"
 pytest-cov = "^3.0.0"
-requests = "^2.27.1"
+httpx = "^0.23.1"
 
 [tool.black]
 line-length = 120
