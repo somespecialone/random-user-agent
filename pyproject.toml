@@ -10,7 +10,7 @@ python = "^3.10.5"
 fastapi = "^0.88.0"
 
 [tool.poetry.group.dev.dependencies]
-uvicorn = "^0.17.5"
+uvicorn = "^0.21.1"
 
 [tool.poetry.group.test]
 optional = true
