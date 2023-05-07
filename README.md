@@ -1,42 +1,45 @@
 # <p align="center">Random user agent</p>
 
----
-
+[![Made in Ukraine](https://img.shields.io/badge/made_in-ukraine-ffd700.svg?labelColor=0057b7)](https://stand-with-ukraine.pp.ua)
 [![license](https://img.shields.io/github/license/somespecialone/random-user-agent)](https://github.com/somespecialone/random-user-agent/blob/master/LICENSE)
 [![Tests](https://github.com/somespecialone/random-user-agent/actions/workflows/tests.yml/badge.svg)](https://github.com/somespecialone/random-user-agent/actions/workflows/tests.yml)
-[![Deploy](https://github.com/somespecialone/random-user-agent/actions/workflows/deploy.yml/badge.svg)](https://github.com/somespecialone/random-user-agent/actions/workflows/deploy.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/somespecialone/random-user-agent/badge)](https://www.codefactor.io/repository/github/somespecialone/random-user-agent)
 [![codecov](https://codecov.io/gh/somespecialone/random-user-agent/branch/master/graph/badge.svg?token=H3JL81SL7P)](https://codecov.io/gh/somespecialone/random-user-agent)
-[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ---
 
-[![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/somespecialone/random-user-agent.git)
+[//]: # ([![Install on Space]&#40;https://deta.space/buttons/dark.svg&#41;]&#40;&#41;)
 
-### **Micro available on [randua.deta.dev](https://randua.deta.dev)**
+⚠️**For now micro will NOT successfully builds on `Deta Space` due to timeout exceed**
+
+🎯 Target: `x86_64-unknown-linux-gnu` (Ubuntu 18.04 glibc 2.27)
 
 ---
 
-## Routes! 🚀✨
+> API available on [randua.somespecial.one](https://randua.somespecial.one)
 
-> Just do `GET` requests!
+## Routes!
 
-### `/`:
+Just do `GET` requests! 🚀✨
 
-```json
-{
-  "ua": "user-agent"
-}
+All responses are `text/plain`. All data in body.
+
+### Random
+
+```
+user-agent
 ```
 
-### `/all`:
+> https://randua.somespecial.one
 
-```json
-[
-  "ua1",
-  "ua2",
-  ...
-]
+### All
+
+> https://randua.somespecial.one/all
+
+```
+ua1
+ua2
+...
 ```
 
 ## List of used `User-Agents` 🤖:
@@ -44,7 +47,4 @@
 > Thanks authors and maintainers of these resources 🙏
 
 - [pzb `gist`](https://gist.github.com/pzb/b4b6f57144aea7827ae4)
-
-## TODO 📑
-
-- [ ] Much more user-agents
+- [whatismybrowser](https://developers.whatismybrowser.com/useragents/database/)

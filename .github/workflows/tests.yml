@@ -3,29 +3,27 @@ name: Tests
 on:
   push:
     branches: [ master ]
-    paths:
-      - "src/**"
-      - "pyproject.toml"
-      - "tests/**"
+    paths: [ "src", "Cargo.toml" ]
 
 jobs:
   main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: "Install Rust toolchain"
+        uses: actions-rs/toolchain@v1
         with:
-          python-version: "3.x"
-      - uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-      - run: poetry install --with test
+          toolchain: nightly
+          override: true
 
-      - name: "Run PyTest with coverage"
-        run: poetry run pytest --cov --cov-report=xml
+      - name: "Run cargo-tarpaulin"
+        uses: actions-rs/tarpaulin@v0.1
+        with:
+          args: "--test-threads 1"
 
       - name: "Upload coverage report to Codecov"
         uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
-        timeout-minutes: 30
+        timeout-minutes: 10

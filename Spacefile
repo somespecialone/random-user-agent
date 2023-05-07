@@ -1,0 +1,14 @@
+v: 0
+
+app_name: "randua"
+
+micros:
+  - name: main
+    src: .
+    public: true
+    engine: custom
+#    commands:
+#      - cargo build --release
+#    include:
+#      - target/release/randua
+    run: ./randua
