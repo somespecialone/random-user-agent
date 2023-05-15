@@ -10,4 +10,4 @@ env_logger = "0.10.0"
 envy = "0.4.2"
 rand = "0.8.5"
 serde = { version = "1.0.162", features = ["derive"] }
-tokio = { version = "1.28.0", features = ["full"] }
+tokio = { version = "1.28.1", features = ["full"] }
