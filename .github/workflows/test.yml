@@ -1,4 +1,4 @@
-name: Tests
+name: Test
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Generate code coverage
-        run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
+        run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml --engine llvm
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v3
