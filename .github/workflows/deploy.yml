@@ -4,22 +4,16 @@ on:
   release:
     types: [ published ]
 
-  # TODO to remove
-  push:
-    branches: [ test_actions ]
-
 env:
-  #  prod
-  #  DETA_PROJECT_ID: a0rmjYmco9d7
-  DETA_PROJECT_ID: a0SyNfAqTT35
+  DETA_PROJECT_ID: a0rmjYmco9d7
 
 jobs:
   main:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    #    environment:
-    #      name: deta-space
-    #      url: https://randua.somespecial.one
+    environment:
+      name: deta-space
+      url: https://randua.somespecial.one
     steps:
       - uses: actions/checkout@v4
 

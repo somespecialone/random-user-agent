@@ -2,25 +2,21 @@ name: Tests
 
 on:
   push:
-    branches: [ master ]
-    paths: [ "src", "Cargo.toml" ]
+    branches: [ master, test_actions ]
+#    paths: [ "src", "Cargo.toml" ]
 
 jobs:
   main:
-    runs-on: ubuntu
-    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    container:
+      image: xd009642/tarpaulin:develop-nightly
+      options: --security-opt seccomp=unconfined
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - uses: hecrj/setup-rust-action@v2
-        with:
-         rust-version: nightly
-         targets: x86_64-unknown-linux-gnu
 
-      - name: "Run cargo-tarpaulin"
-        uses: actions-rs/tarpaulin@v0.1
-        with:
-          version: "0.25.2"
-          args: "--test-threads 1"
+      - name: Generate code coverage
+        run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v3
