@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  release:
+    types: [ published ]
+
+  # TODO to remove
+  push:
+    branches: [ test_actions ]
+
+env:
+  #  prod
+  #  DETA_PROJECT_ID: a0rmjYmco9d7
+  DETA_PROJECT_ID: a0SyNfAqTT35
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    #    environment:
+    #      name: deta-space
+    #      url: https://randua.somespecial.one
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build application in Docker image
+        run: docker run --rm --name rustc --mount type=bind,source=.,target=/app somespecialone/deta-rust-builder:latest cargo build --release
+
+      - name: Copy deployment files and executable to root
+        run: cp target/release/randua deployment/.spaceignore deployment/Spacefile .
+
+      - name: Deploy to Deta Space
+        uses: neobrains/space-deployment-github-action@v0.5
+        with:
+          access_token: ${{ secrets.DETA_ACCESS_TOKEN }}
+          project_id: ${{ env.DETA_PROJECT_ID }}
+          space_push: true

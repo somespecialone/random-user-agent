@@ -1,0 +1,10 @@
+v: 0
+
+app_name: RandUA
+
+micros:
+  - name: api
+    src: .
+    public: true
+    engine: custom
+    run: ./randua
