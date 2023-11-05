@@ -1,13 +1,14 @@
 [package]
 name = "randua"
-version = "2.0.0"
+version = "2.0.1"
 edition = "2021"
 
 [dependencies]
+actix-cors = "0.6.4"
 actix-files = "0.6.2"
-actix-web = "4.3.1"
+actix-web = "4.4.0"
 env_logger = "0.10.0"
 envy = "0.4.2"
 rand = "0.8.5"
-serde = { version = "1.0.162", features = ["derive"] }
-tokio = { version = "1.28.0", features = ["full"] }
+serde = { version = "1.0.190", features = ["derive"] }
+tokio = { version = "1.33.0", features = ["full"] }

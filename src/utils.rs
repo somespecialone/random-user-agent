@@ -1,9 +1,13 @@
 /// https://towardsdatascience.com/interview-question-select-a-random-line-from-a-file-in-rust-c0a8cddcddfb
+/// getting single line with uniform distribution
+use std::io::Result;
 
-use std::io::{Result as STDResult};
-use tokio::{fs::File, io::{BufReader, Lines}};
+use tokio::{
+    fs::File,
+    io::{BufReader, Lines},
+};
 
-async fn try_nth(lines: &mut Lines<BufReader<File>>, n: usize) -> STDResult<Option<String>> {
+async fn try_nth(lines: &mut Lines<BufReader<File>>, n: usize) -> Result<Option<String>> {
     for _ in 0..n {
         if lines.next_line().await?.is_none() {
             return Ok(None);
@@ -12,7 +16,7 @@ async fn try_nth(lines: &mut Lines<BufReader<File>>, n: usize) -> STDResult<Opti
     lines.next_line().await
 }
 
-pub async fn one_pass_skip(mut iter: Lines<BufReader<File>>, r: f64) -> STDResult<Option<String>> {
+pub async fn one_pass_skip(mut iter: Lines<BufReader<File>>, r: f64) -> Result<Option<String>> {
     let mut offset = 1;
     let mut index1 = 1;
     let mut random_item = None;
