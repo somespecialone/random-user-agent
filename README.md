@@ -10,9 +10,12 @@ Random User Agent
 
 [//]: # ([![Install on Space]&#40;https://deta.space/buttons/dark.svg&#41;]&#40;&#41;)
 
-⚠️**For now, micro will NOT successfully build on `Deta Space` due to timeout exceed**
-
-🎯 Target: `x86_64-unknown-linux-gnu` (Ubuntu 18.04 glibc 2.27)
+> [!WARNING]
+> For now, micro will NOT successfully build on `Deta Space` due to timeout exceed
+> 
+> 🎯 Target: `x86_64-unknown-linux-gnu` (Ubuntu 18.04 glibc 2.27)
+> 
+> You can build it using [somespecialone/deta-rust-builder](https://github.com/somespecialone/deta-rust-builder) image
 
 ---
 
